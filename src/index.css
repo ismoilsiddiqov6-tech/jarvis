@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #030712;
+    color: #e0f2fe;
+    font-family: 'Chakra Petch', sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverseSpinSlow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinFast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverseSpinFast {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes scanLaser {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 98%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 20s linear infinite;
+}
+
+.animate-reverse-spin-slow {
+  animation: reverseSpinSlow 15s linear infinite;
+}
+
+.animate-spin-fast {
+  animation: spinFast 5s linear infinite;
+}
+
+.animate-reverse-spin-fast {
+  animation: reverseSpinFast 4s linear infinite;
+}
+
+.animate-scan {
+  animation: scanLaser 2s ease-in-out infinite alternate;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Custom sci-fi scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.8);
+}
+
+/* Subtle holographic grid background overlay */
+.hud-grid {
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
